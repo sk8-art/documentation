@@ -64,7 +64,7 @@ text-decoration: none; | Не подчеркивает
 
 2) git config --global user.name "ник привязанныый к github"
 
-git push - вход в github
+` git push ` - вход в github
 
 [Содержание](#content)
 

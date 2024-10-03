@@ -92,4 +92,41 @@ $b = 5;
 
 ` echo $b[1]; ` - вывод по индексу (можно вывести только если тип строковый)
 
+## Массивы
+
+` $array = [1,2,3]; ` - создание массива (способ 2)
+
+```
+foreach ($array as $element) {
+        $sum += $element;
+    }
+```
+- сумма всех элементов массива
+
+```
+$max = 0;
+    foreach ($array as $element) {
+        if ($element > $max) {
+            $max = $element;
+        }
+    }
+    echo "<br>Максимальное значение в массиве: $max"
+```
+- максимальное значение в массиве
+
+```
+for ($i = 0; $i < count($array) - 1; $i++) {
+        for ($j = 0; $j < count($array) - $i - 1; $j++) {
+            if ($array[$j] > $array[$j + 1]) {
+                $temp = $array[$j];
+                $array[$j] = $array[j +1];
+                $array[$j + 1] = $temp;
+            }
+        }
+    }
+echo "<br>";
+print_r($array);
+```
+- пузырьковая сортировка
+
 [Содержание](#content)

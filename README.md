@@ -11,7 +11,7 @@
 
    4.1 [Массивы](#array)
    
-   4.2 [Тхнология MVC](#mvc) 
+   4.2 [Технология MVC](#mvc) 
 ---
 # CSS <a id="css"></a>
 ## Подчеркивание <a id="underline"></a>
@@ -135,17 +135,27 @@ print_r($array);
 
 ## Технология MVC <a id="mvc"></a>
 
-1. Создали репозиторий mvc, добавили его в папку `localhost`
-2. Из папки `laravel` копируем и вставляем в папку репозитория
-3. Запускаем OSPanel там свой проект и вводим ссылку `localhost/(name_fail)`
-4. Там заходим в `public`, открываем папку через VSCode
-5. 
-
-----
-
+1. Создали репозиторий mvc, добавили его в папку `localhost`(необязательно)
+2. Здесь создаем project, если выдает ошибку удаляем все нахер из папки project и следуем 3 пункту
 ```OSPanel
 cd domains/localhost
 composer create-project --prefer-dist laravel/laravel:^9.0 project
- ```
+```
+3. Из папки `laravel` копируем и вставляем в папку
+4. Запускаем OSPanel там свой проект и вводим ссылку `localhost/(name_fail)`
+5. Там заходим в `public`, открываем папку через VSCode
+6. Открывам PhpMyAdmin, здесь создаем БД с `utf8mb3_general_ci`
+7. Заходим в консоль и переходим в project, и прописываем php artisan serve
+8. Открываем новую консоль, переходим в папку project, здесь прописываем php artisan make:migration create_users_table
+9. Меняем в .env название DB_DATABASE= на название БД
+10. Заходим в vsc прописываем в папке migrations (если их там несколько, то лишнее нужно удалить) 
+```vsc
+$table->string('name');
+$table->string('email')->unique();
+$table->string('password');
+```
+9. Запускаем в консоли -> php artisan migrate (теперь когда зайдем на PhpMyAdmin будут созданы эти столбцы в БД) 
+----
+
 
 [Содержание](#content)

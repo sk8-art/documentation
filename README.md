@@ -152,16 +152,25 @@ composer create-project --prefer-dist laravel/laravel:^9.0 project
 4. Запускаем OSPanel там свой проект и вводим ссылку `localhost/(name_fail)`
 5. Там заходим в `public`, открываем папку через VSCode
 6. Открывам PhpMyAdmin, здесь создаем БД с `utf8mb3_general_ci`
-7. Заходим в консоль и переходим в project, и прописываем php artisan serve
-8. Открываем новую консоль, переходим в папку project, здесь прописываем php artisan make:migration create_users_table
-9. Меняем в .env название DB_DATABASE= на название БД
-10. Заходим в vsc прописываем в папке migrations (если их там несколько, то лишнее нужно удалить) 
+7. Заходим в консоль и переходим в project, и прописываем
+```
+php artisan serve
+```
+9. Открываем новую консоль, переходим в папку project, здесь прописываем
+```
+php artisan make:migration create_users_table
+```
+10. Меняем в `.env` название `DB_DATABASE=` на название БД
+11. Заходим в vsc прописываем в папке migrations (если их там несколько, то лишнее нужно удалить) 
 ```vsc
 $table->string('name');
 $table->string('email')->unique();
 $table->string('password');
 ```
-9. Запускаем в консоли -> php artisan migrate (теперь когда зайдем на PhpMyAdmin будут созданы эти столбцы в БД) 
+9. Запускаем в консоли -> (теперь когда зайдем на PhpMyAdmin будут созданы эти столбцы в БД) 
+```
+php artisan migrate 
+```
 ----
 
 

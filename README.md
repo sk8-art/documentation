@@ -136,7 +136,7 @@ print_r($array);
 
 ```  Консоль OSPanel
 cd domains/localhost
-composer create-project --prefer-dist laravel/laravel project
+composer create-project --prefer-dist laravel/laravel:^9.0 project
  ```
 
 [Содержание](#content)

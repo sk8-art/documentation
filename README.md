@@ -156,18 +156,18 @@ composer create-project --prefer-dist laravel/laravel:^9.0 project
 ```
 php artisan serve
 ```
-9. Открываем новую консоль, переходим в папку project, здесь прописываем
+8. Открываем новую консоль, переходим в папку project, здесь прописываем
 ```
 php artisan make:migration create_users_table
 ```
-10. Меняем в `.env` название `DB_DATABASE=` на название БД
-11. Заходим в vsc прописываем в папке migrations (если их там несколько, то лишнее нужно удалить) 
+9. Меняем в `.env` название `DB_DATABASE=` на название БД
+10. Заходим в vsc прописываем в папке migrations (если их там несколько, то лишнее нужно удалить) 
 ```vsc
 $table->string('name');
 $table->string('email')->unique();
 $table->string('password');
 ```
-9. Запускаем в консоли -> (теперь когда зайдем на PhpMyAdmin будут созданы эти столбцы в БД) 
+11. Запускаем в консоли -> (теперь когда зайдем на PhpMyAdmin будут созданы эти столбцы в БД) 
 ```
 php artisan migrate 
 ```

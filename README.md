@@ -131,5 +131,12 @@ print_r($array);
 
 ## Технология MVC
 
-Создали репозиторий mvc, добавили его в папку localhost, из папка lavalava копируем и вставляем в папку репозитория. Запускаем OSPanel там свой проект и вводим ссылку localhost/(name_fail). Там заходим в public. 
+Создали репозиторий mvc, добавили его в папку localhost, из папка laravel копируем и вставляем в папку репозитория. Запускаем OSPanel там свой проект и вводим ссылку localhost/(name_fail). Там заходим в public.
+----
+
+```  Консоль OSPanel
+cd domains/localhost
+composer create-project --prefer-dist laravel/laravel project
+ ```
+
 [Содержание](#content)

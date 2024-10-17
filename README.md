@@ -139,7 +139,7 @@ print_r($array);
 
 ----
 
-```Консоль OSPanel
+```OSPanel
 cd domains/localhost
 composer create-project --prefer-dist laravel/laravel:^9.0 project
  ```

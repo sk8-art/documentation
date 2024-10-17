@@ -131,10 +131,15 @@ print_r($array);
 
 ## Технология MVC
 
-> Создали репозиторий mvc, добавили его в папку `localhost`, из папки `laravel` копируем и вставляем в папку репозитория. Запускаем OSPanel там свой проект и вводим ссылку `localhost/(name_fail)`. Там заходим в `public`, заходим в папку через VSCode, 
+1. Создали репозиторий mvc, добавили его в папку `localhost`
+2. Из папки `laravel` копируем и вставляем в папку репозитория
+3. Запускаем OSPanel там свой проект и вводим ссылку `localhost/(name_fail)`
+4. Там заходим в `public`, открываем папку через VSCode
+5. 
+
 ----
 
-```  Консоль OSPanel
+```Консоль OSPanel
 cd domains/localhost
 composer create-project --prefer-dist laravel/laravel:^9.0 project
  ```

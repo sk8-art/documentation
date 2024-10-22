@@ -233,3 +233,16 @@ con.onclick = function test() {
 
 * `offsetTop и offsetLeft` - получение информации о положении на странице
 
+```
+// Ограничение по X
+if (newX < containerRect.left) newX = containerRect.left;
+if (newX + draggableRect.width > containerRect.right) {
+newX = containerRect.right - draggableRect.width;
+}
+
+// Ограничение по Y
+if (newY < containerRect.top) newY = containerRect.top;
+if (newY + draggableRect.height > containerRect.bottom) {
+newY = containerRect.bottom - draggableRect.height;
+}
+```

@@ -234,6 +234,11 @@ con.onclick = function test() {
 * `offsetTop и offsetLeft` - получение информации о положении на странице
 
 ```
+document.addEventListener('mousemove', onMouseMove);
+
+// Получаем размеры контейнера
+const containerRect = container.getBoundingClientRect();
+
 // Ограничение по X
 if (newX < containerRect.left) newX = containerRect.left;
 if (newX + draggableRect.width > containerRect.right) {

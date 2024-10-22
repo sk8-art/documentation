@@ -148,6 +148,28 @@ print_r($array);
 ```
 - пузырьковая сортировка
 
+```
+$array = [1, 2, 2, 3, 4, 4, 5];
+$array_unique = [];
+
+for ($i = 0; $i < count($array); $i++) {
+    $is_duplicate = false;
+
+    for ($j = 0; $j < count($array_unique); $j++) {
+        if ($array[$i] == $array_unique[$j]) {
+            $is_duplicate = true;
+            break;
+        }
+    }
+    
+    if (!$is_duplicate) {
+        $array_unique[] = $array[$i];
+    }
+}
+
+print_r($array_unique); // Вывод: [1, 2, 3, 4, 5]
+```
+
 ## Технология MVC <a id="mvc"></a>
 
 1. Создали репозиторий mvc, добавили его в папку `localhost`(необязательно)
@@ -250,4 +272,35 @@ if (newY < containerRect.top) newY = containerRect.top;
 if (newY + draggableRect.height > containerRect.bottom) {
 newY = containerRect.bottom - draggableRect.height;
 }
+```
+```
+<input type="file" id="fileInput" multiple />
+<script>
+document.getElementById('fileInput').addEventListener('change', function() {
+    const files = this.files;
+    if (files.length > 9) {
+        alert("Выберите не более 9 файлов.");
+        this.value = ""; // сбросить выбор
+    }
+});
+</script>
+```
+```
+let dragged;
+
+document.addEventListener('dragstart', (event) => {
+    dragged = event.target;
+});
+
+document.addEventListener('dragover', (event) => {
+    event.preventDefault();
+});
+
+document.addEventListener('drop', (event) => {
+    event.preventDefault();
+    const dropzone = document.getElementById('dropzone'); // ваша область
+    if (dropzone.contains(event.target)) {
+        dropzone.appendChild(dragged);
+    }
+});
 ```

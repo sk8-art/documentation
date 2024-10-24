@@ -173,7 +173,7 @@ print_r($array_unique); // Вывод: [1, 2, 3, 4, 5]
 ## Технология MVC <a id="mvc"></a>
 
 1. Создали репозиторий mvc, добавили его в папку `localhost`(необязательно)
-2. Здесь создаем project, если выдает ошибку удаляем все нахер из папки project и следуем 3 пункту
+2. Здесь создаем project, если выдает ошибку удаляем все нахер из папки project и следуем 3 пункту, если не выдает то пропускаем его
 ```OSPanel
 cd domains/localhost
 composer create-project --prefer-dist laravel/laravel:^9.0 project
@@ -181,6 +181,8 @@ composer create-project --prefer-dist laravel/laravel:^9.0 project
 3. Из папки `laravel` копируем и вставляем в папку
 4. Запускаем OSPanel там свой проект и вводим ссылку `localhost/(name_fail)`
 5. Там заходим в `public`, открываем папку через VSCode
+> (если не работает то удалить в папке database/migrations все кроме user, в папке app/http/controllers все кроме controller и в папке app/models все удалить)
+> и нужно название в .env бд поменять
 6. Открывам PhpMyAdmin, здесь создаем БД с `utf8mb3_general_ci`
 7. Заходим в консоль и переходим в project, и прописываем
 ```
@@ -200,6 +202,57 @@ $table->string('password');
 11. Запускаем в консоли -> (теперь когда зайдем на PhpMyAdmin будут созданы эти столбцы в БД) 
 ```
 php artisan migrate 
+```
+12.
+```
+php artisan make:model User
+```
+- создание новой модели
+
+13.
+```
+ php artisan make:controller ProductController
+```
+- создание контроллера
+14.
+```
+use App\Model\User;
+
+class UserControllerr extends Controller
+{
+    //Валедация
+    public function store(Request $request) {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+        ])
+        $user = User::create($request->all());
+
+        return responce()->jcon($user, 201);
+    }
+
+    public function index() {
+        return User::all();
+    }
+    //Поиск по id
+    public function show($id) {
+        return User::findOrFail($id);
+    }
+
+    public function update(Request $request, $id) {
+        $user = User::FindOrFail($id);
+
+        $user->update($request->all());
+
+        return respone()->json(null, 204);
+    }
+
+    public function destroy($id) {
+        User::destroy($id);
+        return responce()->json(null, 204);
+    }
+}
 ```
 ----
 
@@ -255,52 +308,3 @@ con.onclick = function test() {
 
 * `offsetTop и offsetLeft` - получение информации о положении на странице
 
-```
-document.addEventListener('mousemove', onMouseMove);
-
-// Получаем размеры контейнера
-const containerRect = container.getBoundingClientRect();
-
-// Ограничение по X
-if (newX < containerRect.left) newX = containerRect.left;
-if (newX + draggableRect.width > containerRect.right) {
-newX = containerRect.right - draggableRect.width;
-}
-
-// Ограничение по Y
-if (newY < containerRect.top) newY = containerRect.top;
-if (newY + draggableRect.height > containerRect.bottom) {
-newY = containerRect.bottom - draggableRect.height;
-}
-```
-```
-<input type="file" id="fileInput" multiple />
-<script>
-document.getElementById('fileInput').addEventListener('change', function() {
-    const files = this.files;
-    if (files.length > 9) {
-        alert("Выберите не более 9 файлов.");
-        this.value = ""; // сбросить выбор
-    }
-});
-</script>
-```
-```
-let dragged;
-
-document.addEventListener('dragstart', (event) => {
-    dragged = event.target;
-});
-
-document.addEventListener('dragover', (event) => {
-    event.preventDefault();
-});
-
-document.addEventListener('drop', (event) => {
-    event.preventDefault();
-    const dropzone = document.getElementById('dropzone'); // ваша область
-    if (dropzone.contains(event.target)) {
-        dropzone.appendChild(dragged);
-    }
-});
-```

@@ -254,6 +254,21 @@ class UserControllerr extends Controller
     }
 }
 ```
+
+## Запросы
+
+`get` - получение информации
+
+`post` - отправление информации
+
+`put` - изменение информации
+
+`delete` - удаление информации
+
+1. Заходим в postman (в папке C) пишем `http://localhost/project/public/api/users` доолжно вывести
+```
+[]
+```
 ----
 
 [Содержание](#content)
@@ -308,16 +323,3 @@ con.onclick = function test() {
 
 * `offsetTop и offsetLeft` - получение информации о положении на странице
 
-## Запросы
-
-`get` - получение информации
-
-`post` - отправление информации
-
-`put` - изменение информации
-
-`delete` - удаление информации
-
-1. ```
-http://localhost/project/public/api/users
-```

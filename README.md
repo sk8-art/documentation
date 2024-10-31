@@ -17,8 +17,10 @@
    4.2 [Массивы](#array)
    
    4.3 [Технология MVC](#mvc)
+
+   4.4 [Запросы](#zap)
    
-5. [JavaScript](#js)
+6. [JavaScript](#js)
    
    5.1 [Основы событий мыши](#base_mouse)
 
@@ -255,7 +257,7 @@ class UserControllerr extends Controller
 }
 ```
 
-## Запросы
+## Запросы <a id="zap"></a>
 
 `get` - получение информации
 
@@ -265,7 +267,7 @@ class UserControllerr extends Controller
 
 `delete` - удаление информации
 
-1. Заходим в postman (в папке C) пишем `http://localhost/project/public/api/users` доолжно вывести
+1. Заходим в postman (в папке C) пишем `http://localhost/project/public/api/users` должно вывести
 ```
 []
 ```

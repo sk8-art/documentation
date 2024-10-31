@@ -269,6 +269,10 @@ class UserControllerr extends Controller
 ```
 []
 ```
+
+2. Меняем get на post, заходим в Body > form-data, указываем name, email, password
+
+3. Выбираем delete, в ссылке пишем id который хотим удалить, например `http://localhost/project/public/api/users/1`
 ----
 
 [Содержание](#content)

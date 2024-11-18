@@ -5,6 +5,7 @@
 1. [CSS](#css)
    
     1.1 [Подчеркивание](#underline)
+   
 2. [Методология БЭМ](#met)
 3. [Git](#git)
 
@@ -20,13 +21,13 @@
 
    4.4 [Запросы](#zap)
    
-6. [JavaScript](#js)
+5. [JavaScript](#js)
    
    5.1 [Основы событий мыши](#base_mouse)
 
    5.2 [Работа с координатами](#workXY)
 
-
+6. [Задачи](#tasks)
 ---
 # CSS <a id="css"></a>
 ## Подчеркивание <a id="underline"></a>
@@ -300,10 +301,7 @@ class UserControllerr extends Controller
 
 `delete` - удаление информации
 
-1. Заходим в postman (в папке C) пишем `http://localhost/project/public/api/users` должно вывести
-```
-[]
-```
+1. Заходим в postman (в папке C) пишем `http://localhost/project/public/api/users` должно вывести `[]`
 
 2. Меняем get на post, заходим в Body > form-data, указываем name, email, password
 
@@ -362,3 +360,155 @@ con.onclick = function test() {
 
 * `offsetTop и offsetLeft` - получение информации о положении на странице
 
+#Задачи <a id="tasks"></a>
+
+```
+$age = $_POST["age"];
+
+    $a1 = $age % 10;
+    $a2 = $age % 100;
+    
+    if ($a1==1 && $a2 != 11) {
+        $age1 = "год";
+    } else if ($a1 >= 2 && $a1 <=4 && ($a2 < 12 || $a2 > 14)) {
+        $age1 = "года";
+    } else {
+        $age1 = "лет";
+    }
+echo "hey, $username" . "<br> " . "Тебе уже " . $age . " " . $age1;
+``` 
+> приветствие в зависимости от того сколько ему - лет/год/года
+```
+$fullname = "Oleg Olegov";
+function qwe ($fullname) {
+    $full = strpos($fullname, " ");
+
+    $name = substr($fullname, 0, $full); //здесь из fullname начиная с 0 до позиции пробела
+    echo strtoupper($name);
+    echo"<br>";
+
+    $last = substr($fullname, $full + 1);
+    echo strtolower($last);
+    echo "<br>";
+    
+    $in1 = strtoupper(substr($fullname, 0, 1)); //откуда, что, сколько
+    $in2 = strtoupper(substr($fullname, $full + 1, 1));
+    echo $in1 . $in2;
+    echo "<br>";
+}
+qwe($fullname);
+```
+> функция, которая делает имя олег маленькими буквами, а фамилию капсом
+```
+$array = [1, 2, 3, 2, 4, 5, 1, 6, 3];
+$unique_array = [];
+
+for ($i = 0; $i < count($array); $i++) {
+    $bool = false;
+    for($j = 0; $j < count($unique_array); $j++) {
+       if ($array[$i] == $array[$j]) {
+        $bool = true;
+        break;
+       }
+    }
+    if (!$bool) {
+        $unique_array[] = $array[$i];
+    }
+}
+
+for ($n = 0; $n < count($unique_array); $n++) {
+	echo $unique_array[$n] . "<br>";
+}
+```
+> удаление повторяющихся элементов из числового массива
+
+```
+$max = 0;
+$array_max = [12, 45, 7, 45, 34, 5];
+
+function findSecondLargest($numbers) {
+
+    $max = 0;
+    for ($i = 1; $i < count($numbers); $i++) {
+        if ($numbers[$i] > $max) {
+            $max = $numbers[$i];
+        }
+    }
+
+    $secondLargest = 0;
+    $secondLargestCount = 0;
+
+    for ($i = 0; $i < count($numbers); $i++) {
+        if ($numbers[$i] < $max) {
+            if ($secondLargest === 0 || $numbers[$i] > $secondLargest) {
+                $secondLargest = $numbers[$i];
+                $secondLargestCount = 1;
+            } else if ($numbers[$i] == $secondLargest) {
+              $secondLargestCount++;
+            }
+        }
+    }
+    if($secondLargestCount > 1){
+      return findSecondLargest(array_unique($numbers));
+    }
+
+    return $secondLargest;
+}
+$secondLargest = findSecondLargest($array_max);
+
+if ($secondLargest !== 0) {
+  echo $secondLargest;
+}
+```
+> определение второго наибольшего числа в массиве
+```
+function anana ($str_1, $str_2) {
+    if (count_chars($str_1, 1) == count_chars($str_2, 1)) {
+        echo 'yes';
+    }
+    else {
+        echo 'no';
+    }
+}
+anana('efef', 'fefe');
+```
+> проверка на анаграммы
+
+```
+$fullname = file_get_contents("./text.txt");
+
+function fam($a) {
+    $full = strpos($a, " ");
+    $surname = substr($a, 0, $full);
+    echo $surname;
+}
+fam($fullname);
+echo "<br>";
+
+function name($a) {
+    $full = strpos($a, " ");
+    $name = substr($a, $full + 1);
+    echo $name;
+}
+name($fullname);
+echo "<br>";
+
+function ini($fullname) {
+    echo $fullname[0] . $fullname[strpos($fullname, " ") + 1];
+}
+ini($fullname);
+```
+> функции для вывода по отдельности фамилии, имени и отчестве
+```
+$oleg = ["name" => "oleg", "age"=>"27"];
+$danil = ["name" => "danil", "age"=>"14"];
+$mihail = ["name" => "micha", "age"=>"32"];
+
+echo $oleg["name"] . " " . $oleg["age"];
+echo "<br>";
+echo $danil["name"] . " " . $danil["age"];
+echo "<br>";
+echo $mihail["name"] . " " . $mihail["age"];
+```
+> ассоциации, вывод имени и возраста
+```

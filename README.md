@@ -513,3 +513,16 @@ echo $mihail["name"] . " " . $mihail["age"];
 ```
 > ассоциации, вывод имени и возраста
 ```
+$numder = $_POST["numder"];
+    file_put_contents("./text.txt", $username . " "  , FILE_APPEND);
+    $names = file_get_contents("./text.txt");
+    $namesArray = explode(" ", $names); 
+    for ($i = 0; $i < count($namesArray); $i++) {
+        if ($i + 1 == $numder) {
+            echo "Имя: " . $namesArray[$i];
+            break;
+        }
+    } 
+$array = [["name" => "Олег", "age" => "16", "group"=> "22sib"], ["name" => "Ваня", "age" => "17", "group"=> "22исп"], ["name" => "Алиса", "age" => "18", "group"=> "22э"], ["name" => "Симба", "age" => "15", "group"=> "22sib"], ["name" => "Кеша", "age" => "19", "group"=> "22о"]];
+```
+> долго писала (ну жалко), в поле вводим число и появляется имя загеристрированного

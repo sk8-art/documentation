@@ -360,7 +360,8 @@ con.onclick = function test() {
 
 * `offsetTop и offsetLeft` - получение информации о положении на странице
 
-#Задачи <a id="tasks"></a>
+
+# Задачи <a id="tasks"></a>
 
 ```
 $age = $_POST["age"];

@@ -20,14 +20,16 @@
    4.3 [Технология MVC](#mvc)
 
    4.4 [Запросы](#zap)
+
+   4.5 [QR](#qr)
    
-5. [JavaScript](#js)
+6. [JavaScript](#js)
    
    5.1 [Основы событий мыши](#base_mouse)
 
    5.2 [Работа с координатами](#workXY)
 
-6. [Задачи](#tasks)
+7. [Задачи](#tasks)
 ---
 # CSS <a id="css"></a>
 ## Подчеркивание <a id="underline"></a>
@@ -309,6 +311,15 @@ class UserControllerr extends Controller
 
 3. Выбираем delete, в ссылке пишем id который хотим удалить, например `http://localhost/project/public/api/users/1`
 ----
+
+## QR 
+```
+include = "phpqrcode/lib/qrlib.php"
+
+QRcode::png('https://i.pinimg.com/control2/236x/a3/d5/aa/a3d5aa3020c36e0c2362a03c9e8bf809.jpg', './qrcodes/test.png', 'L', 4, 2);
+
+$output_image = './qrcodes/qwe.png';
+```
 
 [Содержание](#content)
 

@@ -22,6 +22,8 @@
    4.4 [Запросы](#zap)
 
    4.5 [QR](#qr)
+
+   4.6 [Подключение БД](#bd)
    
 6. [JavaScript](#js)
    
@@ -321,6 +323,13 @@ QRcode::png('https://i.pinimg.com/control2/236x/a3/d5/aa/a3d5aa3020c36e0c2362a03
 $output_image = './qrcodes/qwe.png';
 ```
 
+## Подключение БД <a id="bd"></a?
+
+`composer require league/csv` - файл csv
+
+`composer require monolog/monolog` - monolog
+
+`composer require phpoffice/phpspreadsheet` - phpSpreadSheet
 [Содержание](#content)
 
 # JavaScript <a id="js"></a>

@@ -31,7 +31,7 @@
 
    5.2 [Работа с координатами](#workXY)
 
-6.[Electron](#electron)
+6. [Electron](#electron)
 
 7. [Задачи](#tasks)
 ---

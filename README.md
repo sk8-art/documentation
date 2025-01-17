@@ -391,12 +391,12 @@ con.onclick = function test() {
 # Electron <a id="electron"></a>
 
 1. Скачать Node.js (https://nodejs.org/en)
-2. Создать новую папку для своего проекта и перейти в неё с помощью командной строки (PowerDhell вроде не работает)
+2. Создать новую папку для своего проекта и перейти в неё с помощью командной строки (PowerShell вроде не работает)
 3. Устанавливаем на систему `npm install -g electron-forge`
 4. Переходим в папку с проектом
 5. Создаем `electron-forge init name_project`
 
-* закоментировать строку `mainWindow.webContents.openDevTools()` чтоб не была доступена панель для разработчика 
+> закоментировать строку `mainWindow.webContents.openDevTools()` чтоб не была доступена панель для разработчика 
 
 Команды: 
 

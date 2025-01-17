@@ -406,6 +406,8 @@ con.onclick = function test() {
 
 `npm run make` - создаст установщик приложения (устанавливается в систему)
 
+---
+
 ```
 $age = $_POST["age"];
 

@@ -329,7 +329,7 @@ QRcode::png('https://i.pinimg.com/control2/236x/a3/d5/aa/a3d5aa3020c36e0c2362a03
 $output_image = './qrcodes/qwe.png';
 ```
 
-## Подключение БД <a id="bd"></a?
+## Подключение БД <a id="bd"></a>
 
 `composer require league/csv` - файл csv
 

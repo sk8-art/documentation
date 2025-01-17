@@ -138,7 +138,7 @@ $b = 5;
 
 ` implode(разделитель, массив) ` - функция implode в PHP объединяет элементы массива в строку
 
-##Работа с файлами
+## Работа с файлами
 
 ` file_put_contents("./name_fail.txt", "что_хотим_сюда_добавить") ` - добавлене в файл текст
 
@@ -153,7 +153,7 @@ $b = 5;
 ` date("H-i-s") ` - время часы/минуты/секунды
 
 ```
-$oleg = ["name" => "oleg", "age"=>"27"]; ` - ассоциации
+$oleg = ["name" => "oleg", "age"=>"27"];
 echo $oleg["name"];
 ```
 - ассоциации
@@ -336,6 +336,7 @@ $output_image = './qrcodes/qwe.png';
 `composer require monolog/monolog` - monolog
 
 `composer require phpoffice/phpspreadsheet` - phpSpreadSheet
+
 [Содержание](#content)
 
 # JavaScript <a id="js"></a>

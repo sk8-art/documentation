@@ -396,7 +396,7 @@ con.onclick = function test() {
 4. Переходим в папку с проектом
 5. Создаем `electron-forge init name_project`
 
-> закоментировать строку `mainWindow.webContents.openDevTools()` чтоб не была доступена панель для разработчика 
+> закомментировать строку `mainWindow.webContents.openDevTools()` чтоб не была доступена панель для разработчика 
 
 Команды: 
 

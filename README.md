@@ -251,6 +251,7 @@ $table->string('password');
 ```
 php artisan migrate 
 ```
+> чтобы быстро создать Model и migtation можно писать `php artisan make:model Order -m`
 12.
 ```
 php artisan make:model User

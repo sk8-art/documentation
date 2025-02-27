@@ -251,6 +251,10 @@ $table->string('password');
 ```
 php artisan migrate 
 ```
+```
+ artisan db:seed
+```
+-запуск seeders
 * чтобы быстро создать Model и migtation можно писать `php artisan make:model Order -m`
 12.
 ```
